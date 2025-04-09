@@ -86,7 +86,6 @@ const NewNoteArea = ({ fetchNotes }) => {
                         onInput={(e) => handleChange("title", e)} // Handle input properly
                         suppressContentEditableWarning={true}
                     >
-                        {/* {note.title} */}
                     </div>
                 )}
                 <div
@@ -97,9 +96,8 @@ const NewNoteArea = ({ fetchNotes }) => {
                     onInput={(e) => handleChange("content", e)} // Pass event to get innerText
                     suppressContentEditableWarning={true} // Prevent React warning
                 >
-                    {/* {note.content} */}
                 </div>
-                {isExpanded && <div className="add-button" onClick={submitNote}>+</div>}
+                {isExpanded && <div className="add-button" onClick={submitNote}>ADD</div>}
             </div>
         </div>
     );

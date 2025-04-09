@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+
 }
 
 * {
@@ -14,7 +15,7 @@ div {
 .main-container {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   background: #f8f9fa;
@@ -30,28 +31,29 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #016A70;
+  background-color: #0E8388;
   padding: 10px 30px;
+  color: #f8f9fa;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
 header h1 {
-  font-family: "Josefin Sans", sans-serif;
+  /* font-family: "Josefin Sans", sans-serif; */
+  font-family: "Shantell Sans", cursive;
   cursor: pointer;
-  color: white;
   transition: transform 0.2s ease-in-out;
 }
 
 footer {
   text-align: center;
+  color: #CBE4DE;
   width: 100%;
-  background-color: #016A70;
+  background-color: #0E8388;
   margin-top: auto;
 }
 
 footer p {
-  color: white;
   font-size: 14px;
 }
 
@@ -62,10 +64,10 @@ footer p {
   justify-content: center;
   color: white;
   font-size: 14px;
-  background-color: #016A70;
+  background-color: #0E8388;
   overflow: hidden;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
 }
 
 .profile-picture {
@@ -80,17 +82,18 @@ footer p {
   width: 300px;
   height: 370px;
   position: absolute;
-  top: 95px;
+  top: 105px;
   right: 30px;
-  background-color: rgb(0, 0, 0);
+  background-color: #f8f9fa;
   border: 2px solid #c3c3c3;
   border-radius: 25px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   padding: 20px;
   display: flex;
+  font-weight: 500;
   flex-direction: column;
-  color: white;
+  color: #332C39;
 }
 
 .user-menu button {
@@ -104,13 +107,13 @@ footer p {
   width: 100%;
   font-family: "Poppins", sans-serif;
   text-align: center;
-  background: #b5b5b5;
+  background: #F0EEED;
 }
 
 .user-menu button:hover,
 .add-account:hover {
-  background-color: #ffffff;
-  color: black;
+  background-color: #555555;
+  color: #F0EEED;
 }
 
 .add-account {
@@ -119,10 +122,15 @@ footer p {
   cursor: pointer;
   border: 2px solid #d0d0d0;
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: #332C39;
   border-radius: 5px;
   font-family: "Poppins", sans-serif;
-  background: #b5b5b5;
+  background: #F0EEED;
+}
+
+.logout-account {
+  color: #332C39;
+  font-weight: 500;
 }
 
 .menu-loggedin {
@@ -141,6 +149,7 @@ footer p {
 .menu-user-name {
   margin: 10px 0 40px;
   width: 100%;
+  font-size: 20px;
 }
 
 .hidden {
@@ -149,8 +158,8 @@ footer p {
 }
 
 .menu-profile-pic {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   border: 2px solid #d0d0d0;
   cursor: pointer;
@@ -162,51 +171,71 @@ footer p {
 
 .login-page {
   display: flex;
-  font-family: "Josefin Sans", sans-serif;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f8f9fa;
+  /* background-image: url(./assets/bg.png);
+  background-position: center;
+  background-repeat: none;
+  background-size: cover; */
+
+
+
+  background: #EEEEEE;
+  background-image: radial-gradient(#c5c5c5 7.2%, transparent 0);
+  background-size: 25px 25px;
+  border-radius: 20px;
 }
 
 .login-page h1 {
-  font-size: 3rem;
-  color: #016A70;
-  margin-bottom: 20px;
+  font-size: 4rem;
+  color: #2C3333;
+  /* font-family: "Josefin Sans", sans-serif; */
+  font-family: "Shantell Sans", cursive;
+  margin: 0;
+  margin-bottom: 25px;
 }
 
-.login-page button {
-  background-color: #00858c;
-  font-family: "Josefin Sans", sans-serif;
-  color: #ffffff;
-  padding: 10px 20px;
+.login-w-google {
+  background-color: #0E8388;
+  font-family: "Poppins", sans-serif;
+  color: #FBF7F0;
+  padding: 10px 60px;
   border: none;
-  border-radius: 5px;
+  outline: none;
+  border-radius: 50px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-weight: 400;
 }
 
-.login-page button:hover {
-  background-color: #016A70;
+.login-w-google:hover {
+  background-color: #2E4F4F;
+  color: #FBF7F0;
+  font-weight: 400;
 }
+
 
 .ispinner {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .ispinner-blade {
   position: absolute;
-  width: 6%;
-  height: 25%;
-  background: linear-gradient(to bottom, #016A70, #89c6b8);
-  border-radius: 20px;
+  width: 3%;
+  height: 20%;
+  background: linear-gradient(to bottom, #332C39, #a4a0a7);
+  border-radius: 30px;
   animation: spin 1.2s linear infinite;
 }
 
@@ -282,18 +311,78 @@ footer p {
   animation-delay: 0s;
 }
 
+.add-button {
+  background-color: #555555;
+  color: #F0EEED;
+  align-self: flex-end;
+  width: 60px;
+  height: 35px;
+  margin: 0 5px 5px 0;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-button {
+  padding: 0;
+  float: right;
+  border: none;
+  width: 36px;
+  height: 36px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  background-color: #F0EEED;
+  color: #c3c3c3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px 5px 0;
+}
+
+.add-button:hover {
+  background: #F0EEED;
+  color: #555555;
+  border: 2px solid #555555;
+}
+
+.delete-button:hover {
+  background: #F0EEED;
+  color: #9a969d;
+}
+
+:root {
+  --gap: 1em;
+  /* Adjust as needed */
+  --columns: 4;
+  /* Default number of columns */
+  --clr-bg: #f8f9fa;
+  /* Match your background */
+  --clr-body: #333;
+  /* Match your text color */
+}
+
 .new-note-container {
   height: auto;
   margin-top: 40px;
   margin-bottom: 80px;
   display: flex;
   justify-content: center;
+
 }
 
 .new-note {
   background: #fff;
   padding: 12px 15px;
-  margin: 0;
+  margin: 0 20px;
   width: 500px;
   border-radius: 7px;
   box-shadow: 0.2px 0.2px 6px 1.5px rgba(0, 0, 0, 0.25);
@@ -308,7 +397,7 @@ footer p {
 .note-content {
   width: 100%;
   border: none;
-  padding: 4px;
+  padding: 7px;
   outline: none;
   font-size: 1em;
   flex-grow: 1;
@@ -330,67 +419,31 @@ footer p {
   bottom: -20px;
 }
 
-.add-button {
-  background-color: #00858c;
-  color: white;
-  align-self: flex-end;
-  width: 36px;
-  height: 36px;
-  font-size: 24px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  outline: none;
+.notes-container {
+  max-width: 90rem;
+  padding: 30px;
+  margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-}
-
-.delete-button {
-  align-self: flex-end;
-  padding: 0;
-  float: right;
-  border: none;
-  width: 36px;
-  height: 36px;
-  font-size: 24px;
-  cursor: pointer;
-  border-radius: 50%;
-  outline: none;
-}
-
-
-.add-button:hover {
-  background: #016A70;
-}
-
-.delete-button {
-  background-color: #89c6b8;
-  color: white;
-}
-
-.delete-button:hover {
-  background: #e74c3c;
-}
-
-.notes-container {
-  padding: 0 30px;
+  gap: 5px;
+  overflow: hidden;
 }
 
 .notes {
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
-  padding: 20px;
-  width: 300px;
-  flex-wrap: wrap;
-  float: left;
+  padding: 12px 15px;
+  width: 250px;
+  margin: 10px;
 }
 
 .notes h1 {
   font-size: 1em;
-  margin-bottom: 6px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .notes p {

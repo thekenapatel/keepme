@@ -1,5 +1,12 @@
-import { GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
+import {
+    GoogleAuthProvider,
+    signInWithPopup,
+    signOut,
+    onAuthStateChanged
+} from "firebase/auth";
+
 import { auth } from "./firebase"; // Import initialized auth from firebase.js
+
 
 
 // Google Sign-In
@@ -23,7 +30,6 @@ const signInWithGoogle = async () => {
         console.error("Error signing in:", error.message);
     }
 };
-
 
 
 // Function to update the user menu dynamically

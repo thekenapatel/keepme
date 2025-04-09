@@ -1,8 +1,12 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/keepme/'
-})
+  base: "/keepme/",  // 👈 IMPORTANT for GitHub Pages
+  build: {
+    outDir: "dist",  // 👈 Ensure this is correct
+    emptyOutDir: true
+  }
+});
+
