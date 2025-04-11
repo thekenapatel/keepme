@@ -198,7 +198,13 @@ function NotesContainer({ id, title, content, onDelete }) {
                 >
                     {noteContent}
                 </p>
-                <button className="delete-button" onClick={handleDelete}>
+                <button
+                    className="delete-button"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        handleDelete();
+                    }}
+                >
                     <DeleteIcon />
                 </button>
             </div>

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { db, auth } from "./firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-
+import AddIcon from '@mui/icons-material/Add';
 
 const NewNoteArea = ({ fetchNotes }) => {
     const [note, setNote] = useState({ title: "", content: "" });
@@ -97,9 +97,12 @@ const NewNoteArea = ({ fetchNotes }) => {
                     suppressContentEditableWarning={true} // Prevent React warning
                 >
                 </div>
-                {isExpanded && <div className="add-button" onClick={submitNote}>ADD</div>}
+                {isExpanded &&
+                    <button className="add-button" onClick={submitNote}>
+                        < AddIcon />
+                    </button>}
             </div>
-        </div>
+        </div >
     );
 };
 

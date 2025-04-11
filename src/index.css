@@ -1,7 +1,6 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-
 }
 
 * {
@@ -31,9 +30,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0E8388;
-  padding: 10px 30px;
-  color: #f8f9fa;
+  background-color: #00A693;
+  padding: 25px 30px;
+  color: #FFFFFF;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   position: relative;
 }
@@ -43,18 +42,23 @@ header h1 {
   font-family: "Shantell Sans", cursive;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0;
 }
 
 footer {
   text-align: center;
-  color: #CBE4DE;
+  color: white;
   width: 100%;
-  background-color: #0E8388;
+  background-color: #afafaf;
   margin-top: auto;
+  padding: 7px 0;
 }
 
 footer p {
-  font-size: 14px;
+  font-size: 15px;
+  margin: 0;
 }
 
 .user-profile {
@@ -64,7 +68,7 @@ footer p {
   justify-content: center;
   color: white;
   font-size: 14px;
-  background-color: #0E8388;
+  background-color: #00A693;
   overflow: hidden;
   width: 45px;
   height: 45px;
@@ -82,7 +86,7 @@ footer p {
   width: 300px;
   height: 370px;
   position: absolute;
-  top: 105px;
+  top: 95px;
   right: 30px;
   background-color: #f8f9fa;
   border: 2px solid #c3c3c3;
@@ -190,31 +194,34 @@ footer p {
 
 .login-page h1 {
   font-size: 4rem;
-  color: #2C3333;
+  color: #00A693;
   /* font-family: "Josefin Sans", sans-serif; */
   font-family: "Shantell Sans", cursive;
   margin: 0;
+  font-weight: 600;
   margin-bottom: 25px;
 }
 
 .login-w-google {
-  background-color: #0E8388;
+  background-color: #00A693;
   font-family: "Poppins", sans-serif;
-  color: #FBF7F0;
+  color: white;
   padding: 10px 60px;
   border: none;
   outline: none;
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-weight: 400;
+  font-weight: 500;
+  border: 2px solid #00A693;
 }
 
 .login-w-google:hover {
-  background-color: #2E4F4F;
-  color: #FBF7F0;
-  font-weight: 400;
+  background-color: white;
+  color: #00A693;
+  font-weight: 500;
+  border: 2px solid #00A693;
 }
 
 
@@ -312,14 +319,13 @@ footer p {
 }
 
 .add-button {
-  background-color: #555555;
-  color: #F0EEED;
+  background-color: #00A693;
+  color: white;
   align-self: flex-end;
-  width: 60px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
   margin: 0 5px 5px 0;
-  font-size: 15px;
-  font-weight: 600;
+  padding: 0;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -351,7 +357,7 @@ footer p {
 .add-button:hover {
   background: #F0EEED;
   color: #555555;
-  border: 2px solid #555555;
+  /* border: 2px solid #555555; */
 }
 
 .delete-button:hover {
