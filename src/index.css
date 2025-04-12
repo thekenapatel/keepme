@@ -25,6 +25,17 @@ div {
   width: 100%;
 }
 
+.logo {
+  width: 33px;
+  margin-right: 13px;
+}
+
+.homepage-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 13px;
+}
+
 
 header {
   display: flex;
@@ -172,6 +183,13 @@ footer p {
   align-items: center;
 }
 
+.logo-name {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
 .login-page {
   display: flex;
@@ -179,13 +197,6 @@ footer p {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  /* background-image: url(./assets/bg.png);
-  background-position: center;
-  background-repeat: none;
-  background-size: cover; */
-
-
-
   background: #EEEEEE;
   background-image: radial-gradient(#c5c5c5 7.2%, transparent 0);
   background-size: 25px 25px;
@@ -193,13 +204,12 @@ footer p {
 }
 
 .login-page h1 {
-  font-size: 4rem;
+  font-size: 3.7rem;
   color: #00A693;
   /* font-family: "Josefin Sans", sans-serif; */
   font-family: "Shantell Sans", cursive;
   margin: 0;
   font-weight: 600;
-  margin-bottom: 25px;
 }
 
 .login-w-google {
@@ -322,16 +332,18 @@ footer p {
   background-color: #00A693;
   color: white;
   align-self: flex-end;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   margin: 0 5px 5px 0;
-  padding: 0;
+  padding: 3px 0 0 0;
   border: none;
-  border-radius: 5px;
+  border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   outline: none;
   display: flex;
+  font-size: 27px;
+  font-weight: 400;
   justify-content: center;
   align-items: center;
 }
@@ -340,11 +352,11 @@ footer p {
   padding: 0;
   float: right;
   border: none;
-  width: 36px;
-  height: 36px;
-  font-size: 24px;
+  width: 38px;
+  height: 38px;
+  font-size: 25px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   outline: none;
   background-color: #F0EEED;
   color: #c3c3c3;
@@ -468,6 +480,10 @@ footer p {
   outline: none;
 }
 
+.note-title {
+  font-weight: 600;
+}
+
 .note-note-title {
   font-weight: 600;
 }
@@ -478,4 +494,270 @@ footer p {
   color: #3d3d3d;
   font-weight: 500;
   pointer-events: none;
+}
+
+
+
+
+/* ========== RESPONSIVE LOGIN PAGE ========== */
+@media (max-width: 600px) {
+  .login-page {
+    padding: 10px;
+  }
+
+  .login-page h1 {
+    font-size: 2.2rem;
+  }
+
+  .login-w-google {
+    padding: 8px 30px;
+    font-size: 1rem;
+  }
+
+  .logo {
+    width: 24px;
+    margin-right: 8px;
+  }
+
+  .homepage-logo {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+  }
+
+  .ispinner {
+    width: 50px;
+    height: 50px;
+  }
+
+  .ispinner-blade {
+    width: 4%;
+    height: 18%;
+  }
+}
+
+
+
+
+/* === RESPONSIVE HEADER === */
+@media (max-width: 600px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  .logo {
+    width: 22px;
+  }
+
+  .profile-picture,
+  .user-profile {
+    width: 30px;
+    height: 30px;
+  }
+
+  .user-menu {
+    width: 220px;
+    height: auto;
+    right: 15px;
+    top: 80px;
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .menu-profile-pic {
+    width: 60px;
+    height: 60px;
+  }
+
+  .menu-user-name {
+    font-size: 16px;
+    margin: 8px 0 25px;
+  }
+
+  .menu-user-email {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .add-account,
+  .user-menu button {
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  footer p {
+    font-size: 13px;
+  }
+}
+
+
+/* ========== RESPONSIVE NEW NOTE & ALL NOTES ========== */
+@media (max-width: 600px) {
+  .new-note-container {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+
+  .new-note {
+    width: 100%;
+    max-width: 100%;
+    margin: 15px 50px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    min-height: 20px;
+  }
+
+  .note-title,
+  .note-content {
+    font-size: 0.9em;
+    padding: 6px;
+  }
+
+  .new-note.expanded {
+    min-height: 100px;
+  }
+
+  .new-note.expanded .note-title,
+  .new-note.expanded .note-content {
+    min-height: 35px;
+  }
+
+  .add-button,
+  .delete-button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    margin: 0 4px 4px 0;
+  }
+
+  .notes-container {
+    padding: 10px;
+    gap: 6px;
+  }
+
+  /* 
+  .notes {
+    width: calc(50% - 10px);
+    padding: 10px 12px;
+    font-size: 0.9em;
+    margin: 5px;
+  }
+
+  .notes h1,
+  .notes p {
+    font-size: 0.85em;
+  }
+
+  .note-note-title {
+    font-size: 0.9em;
+  } */
+
+  .menu-user-name,
+  .menu-user-email {
+    font-size: 13px;
+  }
+}
+
+
+
+
+
+/* ---------- Pop Up Modal ------------ */
+.edit-content {
+  outline: none;
+
+}
+
+.modal-body {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 1px;
+  transition: background-color 0.3s;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.custom-modal {
+  border-radius: 12px;
+  padding: 0;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-height: 80vh;
+}
+
+.editable-title {
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  outline: none;
+  border: none;
+  padding: 3px 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.editable-content {
+  font-size: 1em;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  min-height: 200px;
+  outline: none;
+  border: none;
+  max-height: 50vh;
+  padding: 3px 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.editable-title:focus,
+.editable-content:focus {
+  outline: none;
+}
+
+.modal-footer {
+  padding: 10px 20px;
+}
+
+/* Placeholder styling using :empty:before */
+.edit-title:empty::before,
+.edit-content:empty::before {
+  content: attr(data-placeholder);
+  color: #3d3d3d;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.save-button {
+  width: 60px;
+  height: 33px;
+  font-size: 14px;
+  background: #00A693;
+  outline: none;
+  border: none;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }

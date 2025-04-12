@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { signInWithGoogle, logout } from "./auth";
-import AddIcon from '@mui/icons-material/Add';
+import logo from "../assets/logo.png";
 
 
 function Header({ user }) {
@@ -27,6 +27,7 @@ function Header({ user }) {
 
     return (
         <header>
+            <img className="logo" src={logo} alt="logo image"></img>
             <h1>KeepMe</h1>
             <div className="user-profile" onClick={toggleMenu}>
                 <img
@@ -53,7 +54,7 @@ function Header({ user }) {
                             }
                             <p className="menu-user-name" id="user-name">Hi, {user?.displayName || "Guest"}!</p>
                         </div>
-                        <div className="add-account" onClick={signInWithGoogle}>< AddIcon />Add Another Account</div>
+                        <div className="add-account" onClick={signInWithGoogle}>+ Add Another Account</div>
                         <button onClick={logout} className="logout-account">Logout</button>
                     </div>
                 )}

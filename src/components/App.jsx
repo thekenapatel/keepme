@@ -7,7 +7,7 @@ import NotesContainer from "./NotesContainer";
 import { signInWithGoogle, logout } from "./auth";
 import { auth, db } from "./firebase";
 import { collection, addDoc, query, orderBy, onSnapshot, deleteDoc, doc, serverTimestamp } from "firebase/firestore";
-
+import homepagelogo from "../assets/homepage-logo.png";
 
 
 function App() {
@@ -110,7 +110,10 @@ function App() {
       <div className="main-container">
         {!user ? (
           <div className="login-page">
-            <h1>KeepMe</h1>
+            <div className="logo-name">
+              <img className="homepage-logo" src={homepagelogo} alt="homepage-logo"></img>
+              <h1>KeepMe</h1>
+            </div>
             <button className="login-w-google" onClick={signInWithGoogle}>Login with Google</button>
           </div>
         ) : (

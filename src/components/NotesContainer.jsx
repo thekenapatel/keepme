@@ -101,7 +101,7 @@
 
 
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { db, auth } from "./firebase";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -113,16 +113,48 @@ function NotesContainer({ id, title, content, onDelete }) {
     const [modalContent, setModalContent] = useState(content);
     const titleRef = useRef(null);
     const contentRef = useRef(null);
+    const modalContentRef = useRef(null);
+    const modalTitleRef = useRef(null);
+
+
+    useEffect(() => {
+        if (modalTitleRef.current) {
+            modalTitleRef.current.innerText = modalTitle;
+        }
+        if (modalContentRef.current) {
+            modalContentRef.current.innerText = modalContent;
+        }
+    }, []);
+
 
     // Function to update Firestore when user saves changes
+    // const updateNote = async () => {
+    //     if (!auth.currentUser) return;
+    //     const noteRef = doc(db, "users", auth.currentUser.uid, "notes", id);
+    //     try {
+    //         await updateDoc(noteRef, { title: modalTitle, content: modalContent });
+    //         setNoteTitle(modalTitle);
+    //         setNoteContent(modalContent);
+    //         console.log("Note updated successfully");
+    //     } catch (error) {
+    //         console.error("Error updating note:", error);
+    //     }
+    // };
+
     const updateNote = async () => {
         if (!auth.currentUser) return;
+
         const noteRef = doc(db, "users", auth.currentUser.uid, "notes", id);
+        const updatedTitle = modalTitleRef.current.innerText;
+        const updatedContent = modalContentRef.current.innerText;
+
         try {
-            await updateDoc(noteRef, { title: modalTitle, content: modalContent });
-            setNoteTitle(modalTitle);
-            setNoteContent(modalContent);
-            console.log("Note updated successfully");
+            await updateDoc(noteRef, {
+                title: updatedTitle,
+                content: updatedContent
+            });
+            setNoteTitle(updatedTitle);
+            setNoteContent(updatedContent);
         } catch (error) {
             console.error("Error updating note:", error);
         }
@@ -142,66 +174,165 @@ function NotesContainer({ id, title, content, onDelete }) {
         }
     }
 
+
+
+
+
+
+
     return (
         <>
             {/* Bootstrap Modal */}
-            <div className="modal fade" id={`modal-${id}`} tabIndex="-1" aria-labelledby={`modalLabel-${id}`} aria-hidden="true">
+            {/* <div
+                className="modal fade"
+                id={`modal-${id}`}
+                tabIndex="-1"
+                aria-labelledby={`modalLabel-${id}`}
+                aria-hidden="true"
+            >
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
                             <input
                                 type="text"
-                                className="form-control"
+                                className="edit-title"
                                 value={modalTitle}
                                 onChange={(e) => setModalTitle(e.target.value)}
                                 placeholder="Edit Title"
                             />
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div className="modal-body">
+                        {/* <div className="modal-body">
                             <textarea
-                                className="form-control"
+                                className="edit-content"
                                 rows="5"
                                 value={modalContent}
                                 onChange={(e) => setModalContent(e.target.value)}
                                 placeholder="Edit Content"
                             ></textarea>
-                        </div>
+                        </div> */}
+
+
+            {/* <div className="modal-body">
+                            <div
+                                className="edit-content"
+                                contentEditable="true"
+                                aria-multiline="true"
+                                role="textbox"
+                                tabIndex="3"
+                                spellCheck="true"
+                                value={modalContent}
+                                onChange={(e) => setModalContent(e.target.value)}
+                            >
+                            </div>
+                        </div> 
+
+
+
+
+
+
+            
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button
                                 type="button"
                                 className="btn btn-primary"
                                 onClick={updateNote}
                                 data-bs-dismiss="modal"
                             >
-                                Save changes
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
+
+
+
+
+
+
+
+            {/* Bootstrap Modal */}
+            <div
+                className="modal fade"
+                id={`modal-${id}`}
+                tabIndex="-1"
+                aria-labelledby={`modalLabel-${id}`}
+                aria-hidden="true"
+            >
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content custom-modal">
+                        <div className="modal-body">
+                            <div
+                                ref={modalTitleRef}
+                                className="editable-title"
+                                contentEditable={true}
+                                data-placeholder="Title"
+                                suppressContentEditableWarning={true}
+                                onInput={(e) => setModalTitle(e.currentTarget.textContent)}
+                            >
+                            </div>
+                            <div
+                                ref={modalContentRef}
+                                className="editable-content"
+                                contentEditable={true}
+                                data-placeholder="Note"
+                                suppressContentEditableWarning={true}
+                                onInput={(e) => setModalContent(e.currentTarget.textContent)}
+                            >
+                            </div>
+                        </div>
+                        <div className="modal-footer border-0">
+                            <button
+                                type="button"
+                                className="btn btn-primary save-button"
+                                onClick={updateNote}
+                                data-bs-dismiss="modal"
+                            >
+                                Save
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
 
+
+
+
+
+
+
+
+
             {/* Note Card */}
-            <div className="notes" data-bs-toggle="modal" data-bs-target={`#modal-${id}`}>
-                <h1
-                    ref={titleRef}
-                    className="note-title"
-                    suppressContentEditableWarning={true}
+            <div className="notes">
+                <div
+                    onClick={() => document.getElementById(`modal-${id}`)?.classList.add("show")} // optional: JS-based modal trigger
+                    data-bs-toggle="modal"
+                    data-bs-target={`#modal-${id}`}
+                    style={{ width: "100%" }}
                 >
-                    {noteTitle}
-                </h1>
-                <p
-                    ref={contentRef}
-                    className="note-content"
-                    suppressContentEditableWarning={true}
-                >
-                    {noteContent}
-                </p>
+                    <h1
+                        ref={titleRef}
+                        className="note-title"
+                        suppressContentEditableWarning={true}
+                    >
+                        {noteTitle}
+                    </h1>
+                    <p
+                        ref={contentRef}
+                        className="note-content"
+                        suppressContentEditableWarning={true}
+                    >
+                        {noteContent}
+                    </p>
+                </div>
+
                 <button
                     className="delete-button"
                     onClick={(e) => {
-                        e.stopPropagation();
+                        e.stopPropagation(); // prevents modal trigger
                         handleDelete();
                     }}
                 >
