@@ -24,6 +24,22 @@ function NotesContainer({ id, title, content, onDelete }) {
     }, []);
 
 
+    useEffect(() => {
+        const modal = document.getElementById(`modal-${id}`);
+        if (modal) {
+            modal.addEventListener('hidden.bs.modal', () => {
+                setTimeout(() => {
+                    window.dispatchEvent(new Event('resize'));
+                }, 100);
+            });
+        }
+    }, [id]); // add `id` as a dependency so it re-runs per note instance
+
+
+
+
+
+
     // const updateNote = async () => {
     //     if (!auth.currentUser) return;
 
@@ -61,13 +77,11 @@ function NotesContainer({ id, title, content, onDelete }) {
     // Force reflow manually
     setTimeout(() => {
         window.dispatchEvent(new Event('resize'));
-    }, 100);
-
+    }, 150);
 
     const updateNote = async () => {
         if (!auth.currentUser) return;
 
-        const noteRef = doc(db, "users", auth.currentUser.uid, "notes", id);
         const updatedTitle = modalTitleRef.current.innerText;
         const updatedContent = modalContentRef.current.innerText;
 
@@ -79,15 +93,14 @@ function NotesContainer({ id, title, content, onDelete }) {
             setNoteTitle(updatedTitle);
             setNoteContent(updatedContent);
 
-            // ✅ Trigger reflow after DOM updates
+            // ✅ Trigger layout recalculation after modal closes
             setTimeout(() => {
-                window.dispatchEvent(new Event("resize"));
-            }, 50);
+                window.dispatchEvent(new Event('resize'));
+            }, 150);
         } catch (error) {
             console.error("Error updating note:", error);
         }
     };
-
 
     return (
         <>
