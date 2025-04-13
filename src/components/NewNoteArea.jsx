@@ -69,7 +69,6 @@ const NewNoteArea = ({ fetchNotes }) => {
 
 
 
-
     return (
         <div className="new-note-container">
             <div

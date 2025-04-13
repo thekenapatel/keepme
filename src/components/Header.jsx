@@ -54,7 +54,7 @@ function Header({ user }) {
                             }
                             <p className="menu-user-name" id="user-name">Hi, {user?.displayName || "Guest"}!</p>
                         </div>
-                        <div className="add-account" onClick={signInWithGoogle}>+ Add Another Account</div>
+                        <div className="add-account" onClick={signInWithGoogle}>Switch Account</div>
                         <button onClick={logout} className="logout-account">Logout</button>
                     </div>
                 )}

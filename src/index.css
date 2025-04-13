@@ -206,7 +206,6 @@ footer p {
 .login-page h1 {
   font-size: 3.7rem;
   color: #00A693;
-  /* font-family: "Josefin Sans", sans-serif; */
   font-family: "Shantell Sans", cursive;
   margin: 0;
   font-weight: 600;
@@ -250,7 +249,7 @@ footer p {
 .ispinner-blade {
   position: absolute;
   width: 3%;
-  height: 20%;
+  height: 19%;
   background: linear-gradient(to bottom, #332C39, #a4a0a7);
   border-radius: 30px;
   animation: spin 1.2s linear infinite;
@@ -367,8 +366,8 @@ footer p {
 }
 
 .add-button:hover {
-  background: #F0EEED;
-  color: #555555;
+  background: #6e6c6c;
+  color: white;
   /* border: 2px solid #555555; */
 }
 
@@ -437,6 +436,7 @@ footer p {
   bottom: -20px;
 }
 
+/* 
 .notes-container {
   max-width: 90rem;
   padding: 30px;
@@ -447,6 +447,17 @@ footer p {
   align-items: center;
   gap: 5px;
   overflow: hidden;
+} */
+
+
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 90rem;
+  box-sizing: border-box;
 }
 
 .notes {
@@ -456,6 +467,8 @@ footer p {
   padding: 12px 15px;
   width: 250px;
   margin: 10px;
+  transition: all 0.1s ease-in-out;
+  min-height: 100px;
 }
 
 .notes h1 {
@@ -606,7 +619,7 @@ footer p {
   .new-note {
     width: 100%;
     max-width: 100%;
-    margin: 15px 50px;
+    margin: 15px 30px;
     padding: 8px 12px;
     border-radius: 6px;
     min-height: 20px;
@@ -614,7 +627,7 @@ footer p {
 
   .note-title,
   .note-content {
-    font-size: 0.9em;
+    font-size: 13px;
     padding: 6px;
   }
 
@@ -627,35 +640,33 @@ footer p {
     min-height: 35px;
   }
 
-  .add-button,
-  .delete-button {
+  .add-button {
     width: 30px;
     height: 30px;
-    font-size: 18px;
+    font-size: 23px;
     margin: 0 4px 4px 0;
   }
 
+  .delete-button {
+    width: 33px;
+    height: 33px;
+  }
+
   .notes-container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 13px;
     padding: 10px;
     gap: 6px;
   }
 
-  /* 
-  .notes {
-    width: calc(50% - 10px);
-    padding: 10px 12px;
-    font-size: 0.9em;
-    margin: 5px;
+  .modal {
+    padding: 30px;
   }
-
-  .notes h1,
-  .notes p {
-    font-size: 0.85em;
-  }
-
-  .note-note-title {
-    font-size: 0.9em;
-  } */
 
   .menu-user-name,
   .menu-user-email {
@@ -670,7 +681,6 @@ footer p {
 /* ---------- Pop Up Modal ------------ */
 .edit-content {
   outline: none;
-
 }
 
 .modal-body {
@@ -760,4 +770,8 @@ footer p {
   align-items: center;
   justify-content: center;
   margin: 0;
+}
+
+.save-button:hover {
+  background: #6e6c6c;
 }
