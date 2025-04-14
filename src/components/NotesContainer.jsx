@@ -82,6 +82,7 @@ function NotesContainer({ id, title, content, onDelete }) {
     const updateNote = async () => {
         if (!auth.currentUser) return;
 
+        const noteRef = doc(db, "users", auth.currentUser.uid, "notes", id); // ← this was missing
         const updatedTitle = modalTitleRef.current.innerText;
         const updatedContent = modalContentRef.current.innerText;
 
@@ -93,7 +94,7 @@ function NotesContainer({ id, title, content, onDelete }) {
             setNoteTitle(updatedTitle);
             setNoteContent(updatedContent);
 
-            // ✅ Trigger layout recalculation after modal closes
+            // Trigger layout recalculation
             setTimeout(() => {
                 window.dispatchEvent(new Event('resize'));
             }, 150);
