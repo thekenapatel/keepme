@@ -1,6 +1,6 @@
-# 📝 KeepMe – Google Keep Clone with Auth, Dark Mode & Firebase
+# 📝 KeepMe – Google Keep Clone
 
-A full-featured note-taking web app inspired by Google Keep. Built with **React**, **Firebase**, and **Material UI**, it supports user authentication, real-time database sync, responsive design, dark/light modes, and a clean, intuitive UI.
+A beautiful, responsive, and full-featured note-taking web app built with **React**, **Firebase**, and **Material UI**. Includes Google Sign-In, real-time sync, dark/light modes, and more.
 
 ---
 
@@ -21,8 +21,18 @@ A full-featured note-taking web app inspired by Google Keep. Built with **React*
 
 ## 🖼️ Project Screenshots
 
-*(Add screenshots here using `![Alt text](image link)`)*  
-You can take snapshots of the login screen, home screen (with notes), and dark mode.
+![Login Page](https://github.com/user-attachments/assets/4020c6ad-2514-4aad-820e-225bd182dcd6)
+![Home Page](https://github.com/user-attachments/assets/506d8445-d9fb-4bb0-a9ee-c116c60ebaa1)
+![Auth Page](https://github.com/user-attachments/assets/ce546d97-daa8-40fc-b0dd-dbc9fb04d1e8)
+![Edit Note Modal](https://github.com/user-attachments/assets/ba945217-426a-4ffd-bd12-6dc7b1f2ffde)
+
+---
+
+## 🔧 Tech Stack
+
+- **Frontend** – React, Material UI, Bootstrap
+- **Backend / DB** – Firebase Auth & Firestore
+- **Styling** – CSS, Material UI
 
 ---
 
@@ -46,38 +56,22 @@ Here's a high-level breakdown of how the app works:
    - Masonry layout ensures notes are displayed without gaps.
    - Material UI icons and theme toggle for a clean experience.
    - Loading spinner shown until Firebase fetch completes.
-
+  
 ---
 
-## 📁 Folder Structure
+## 🚀 Getting Started (Local Setup)
 
+```bash
+# 1. Clone the repository
+git clone https://github.com/thekenapatel/keepme.git
+cd keepme
 
----
+# 2. Install dependencies
+npm install
 
-## 🔧 Tech Stack
+# 3. Create a .env file and add your Firebase config:
 
-- **Frontend** – React, Bootstrap, Material UI
-- **Backend/DB** – Firebase Auth & Firestore
-- **Styling** – CSS, Material UI
-- **Routing** – React Router DOM
-
----
-
-## 📁 How to Run This Project Locally
-
-1. **Clone the repo**  
-   `git clone https://github.com/thekenapatel/keepme.git`
-
-2. **Go to project folder**  
-   `cd keepme`
-
-3. **Install dependencies**  
-   `npm install`
-
-4. **Set up Firebase**  
-   Create a `.env` file in the root directory and add your Firebase config:
-
-   ```env
+ ```env
    VITE_API_KEY=your_api_key
    VITE_AUTH_DOMAIN=your_project_id.firebaseapp.com
    VITE_PROJECT_ID=your_project_id
@@ -85,40 +79,39 @@ Here's a high-level breakdown of how the app works:
    VITE_MESSAGING_SENDER_ID=your_sender_id
    VITE_APP_ID=your_app_id
 
-3. **Start the dev server**
-   `npm run dev`
+# 4. Run the app
+npm run dev
 
-5. **Open your browser**
-   `Go to http://localhost:5173`
-
-
+# 5. Visit in your browser
+http://localhost:5173
 
 ---
 
 
 ## 🔗 Live Demo
-
 👉 [Visit KeepMe Live](https://keepmeapp.netlify.app)
 
+---
 
+## 🧠 How It Works
+- On login, user UID is fetched using Firebase Auth.
+- Notes are stored and synced under each user’s ID in Firestore.
+- Real-time sync ensures changes are reflected instantly.
+- Bootstrap modal used to edit notes.
+- Material UI for theme toggle, icons, and visual consistency.
 
-## To Do / Future Enhancements
- - Add tags or color categories for notes
- - Enable drag & drop note rearrangement
- - Add pinned notes section
- - Optional markdown support in note content
 
 
 ## 🙌 Inspiration
    This app is inspired by Google Keep and built for learning and portfolio purposes.
 
 
-
-💙 Author
+💙 Built By
 Kena Patel
-GitHub – thekenapatel
+🔗 GitHub – thekenapatel
 
 
+Inspired by **Google Keep**. Built for learning, fun, and portfolio.
 
 
 
