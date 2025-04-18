@@ -5,17 +5,20 @@ import { getFirestore } from "firebase/firestore";
 
 // Firebase configuration (replace with your credentials)
 const firebaseConfig = {
-    apiKey: "AIzaSyBzRuCetPIyiB0IzAEPHuMUHkiMqNug7sY",
-    authDomain: "keepme-only.firebaseapp.com",
-    projectId: "keepme-only",
-    storageBucket: "keepme-only.firebasestorage.app",
-    messagingSenderId: "1007359821453",
-    appId: "1:1007359821453:web:5d644c6a4565e4535704c4",
-    measurementId: "G-H7ZKW33E29"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+console.log("App initialized:", app);
+console.log("API Key:", import.meta.env.VITE_FIREBASE_API_KEY);
 const auth = getAuth(app); // Authentication
 const provider = new GoogleAuthProvider();
 const db = getFirestore(app);

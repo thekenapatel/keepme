@@ -25,15 +25,23 @@ function NotesContainer({ id, title, content, onDelete }) {
 
 
     useEffect(() => {
-        const modal = document.getElementById(`modal-${id}`);
+    const modal = document.getElementById(`modal-${id}`);
+    const handleResize = () => {
+        setTimeout(() => {
+            window.dispatchEvent(new Event('resize'));
+        }, 100);
+    };
+
+    if (modal) {
+        modal.addEventListener('hidden.bs.modal', handleResize);
+    }
+
+    return () => {
         if (modal) {
-            modal.addEventListener('hidden.bs.modal', () => {
-                setTimeout(() => {
-                    window.dispatchEvent(new Event('resize'));
-                }, 100);
-            });
+            modal.removeEventListener('hidden.bs.modal', handleResize);
         }
-    }, [id]); // add `id` as a dependency so it re-runs per note instance
+    };
+}, [id]);
 
 
 
@@ -72,36 +80,28 @@ function NotesContainer({ id, title, content, onDelete }) {
             console.error("Error deleting note:", error);
         }
     }
+const updateNote = async () => {
+    if (!auth.currentUser) return;
 
+    const updatedTitle = modalTitleRef.current.innerText;
+    const updatedContent = modalContentRef.current.innerText;
 
-    // Force reflow manually
-    setTimeout(() => {
-        window.dispatchEvent(new Event('resize'));
-    }, 150);
+    if (updatedTitle === noteTitle && updatedContent === noteContent) return;
 
-    const updateNote = async () => {
-        if (!auth.currentUser) return;
+    try {
+        const noteRef = doc(db, "users", auth.currentUser.uid, "notes", id);
+        await updateDoc(noteRef, {
+            title: updatedTitle,
+            content: updatedContent
+        });
 
-        const noteRef = doc(db, "users", auth.currentUser.uid, "notes", id); // ← this was missing
-        const updatedTitle = modalTitleRef.current.innerText;
-        const updatedContent = modalContentRef.current.innerText;
+        setNoteTitle(updatedTitle);
+        setNoteContent(updatedContent);
+    } catch (error) {
+        console.error("Error updating note:", error);
+    }
+};
 
-        try {
-            await updateDoc(noteRef, {
-                title: updatedTitle,
-                content: updatedContent
-            });
-            setNoteTitle(updatedTitle);
-            setNoteContent(updatedContent);
-
-            // Trigger layout recalculation
-            setTimeout(() => {
-                window.dispatchEvent(new Event('resize'));
-            }, 150);
-        } catch (error) {
-            console.error("Error updating note:", error);
-        }
-    };
 
     return (
         <>
