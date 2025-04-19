@@ -62,7 +62,7 @@ Here's a high-level breakdown of how the app works:
 ## 🚀 Getting Started (Local Setup)
 
 ## 1. Clone the repository
-git clone https://github.com/thekenapatel/keepme.git
+git clone https://github.com/thekenapatel/keepme.git <br/>
 cd keepme
 
 ## 2. Install dependencies
