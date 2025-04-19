@@ -88,8 +88,7 @@ http://localhost:5173
 
 
 ## 🔗 Live Demo
-👉 [Visit KeepMe Live](keepme-app.netlify.app)
-
+👉 [Visit KeepMe Live](https://thekenapatel.github.io/keepme/)
 
 ---
 
