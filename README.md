@@ -1,6 +1,6 @@
-# 📝 KeepMe – Google Keep Clone
+# 📝 KeepMe – A Modern Google Keep Clone
 
-A beautiful, responsive, and full-featured note-taking web app built with **React**, **Firebase**, and **Material UI**. Includes Google Sign-In, real-time sync, dark/light modes, and more.
+A beautiful, cloud-powered note app with real-time updates, secure login, and a clean UI — crafted using React, Material UI, and Firebase.
 
 ---
 
@@ -40,19 +40,19 @@ A beautiful, responsive, and full-featured note-taking web app built with **Reac
 
 Here's a high-level breakdown of how the app works:
 
-1. **User Authentication**
+**1. User Authentication**
    - Users log in via Google using Firebase Auth.
    - On login, user UID is fetched and used for storing personalized notes.
 
-2. **Note Management**
+**2. Note Management**
    - Notes are saved to Firestore under that user’s ID.
    - You can create, edit (in a Bootstrap modal), or delete notes.
 
-3. **Data Persistence**
+**3. Data Persistence**
    - All notes sync in real-time.
    - Even after refresh or logout, once re-logged, data is fetched from Firebase.
 
-4. **UI Enhancements**
+**4. UI Enhancements**
    - Masonry layout ensures notes are displayed without gaps.
    - Material UI icons and theme toggle for a clean experience.
    - Loading spinner shown until Firebase fetch completes.
@@ -61,35 +61,35 @@ Here's a high-level breakdown of how the app works:
 
 ## 🚀 Getting Started (Local Setup)
 
-```bash
-# 1. Clone the repository
+## 1. Clone the repository
 git clone https://github.com/thekenapatel/keepme.git
 cd keepme
 
-# 2. Install dependencies
+## 2. Install dependencies
 npm install
 
-# 3. Create a .env file and add your Firebase config:
+## 3. Create a .env file and add your Firebase config
 
- ```env
-   VITE_API_KEY=your_api_key
-   VITE_AUTH_DOMAIN=your_project_id.firebaseapp.com
-   VITE_PROJECT_ID=your_project_id
-   VITE_STORAGE_BUCKET=your_project_id.appspot.com
-   VITE_MESSAGING_SENDER_ID=your_sender_id
-   VITE_APP_ID=your_app_id
+VITE_API_KEY=your_api_key  
+VITE_AUTH_DOMAIN=your_project_id.firebaseapp.com  
+VITE_PROJECT_ID=your_project_id  
+VITE_STORAGE_BUCKET=your_project_id.appspot.com  
+VITE_MESSAGING_SENDER_ID=your_sender_id  
+VITE_APP_ID=your_app_id  
 
-# 4. Run the app
+## 4. Run the app
 npm run dev
 
-# 5. Visit in your browser
+## 5. Open in browser
 http://localhost:5173
+
 
 ---
 
 
 ## 🔗 Live Demo
-👉 [Visit KeepMe Live](https://keepmeapp.netlify.app)
+👉 [Visit KeepMe Live](keepme-app.netlify.app)
+
 
 ---
 
@@ -100,18 +100,17 @@ http://localhost:5173
 - Bootstrap modal used to edit notes.
 - Material UI for theme toggle, icons, and visual consistency.
 
-
+---
 
 ## 🙌 Inspiration
-   This app is inspired by Google Keep and built for learning and portfolio purposes.
+   This app is inspired by [Google Keep](https://keep.google.com/). Built for learning and portfolio purposes.
+
+---
 
 
-💙 Built By
-Kena Patel
-🔗 GitHub – thekenapatel
-
-
-Inspired by **Google Keep**. Built for learning, fun, and portfolio.
+## 💙 Built By  
+Kena Patel  
+[GitHub – thekenapatel](https://github.com/thekenapatel)
 
 
 
