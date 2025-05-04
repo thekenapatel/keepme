@@ -25,23 +25,23 @@ function NotesContainer({ id, title, content, onDelete }) {
 
 
     useEffect(() => {
-    const modal = document.getElementById(`modal-${id}`);
-    const handleResize = () => {
-        setTimeout(() => {
-            window.dispatchEvent(new Event('resize'));
-        }, 100);
-    };
+        const modal = document.getElementById(`modal-${id}`);
+        const handleResize = () => {
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 100);
+        };
 
-    if (modal) {
-        modal.addEventListener('hidden.bs.modal', handleResize);
-    }
-
-    return () => {
         if (modal) {
-            modal.removeEventListener('hidden.bs.modal', handleResize);
+            modal.addEventListener('hidden.bs.modal', handleResize);
         }
-    };
-}, [id]);
+
+        return () => {
+            if (modal) {
+                modal.removeEventListener('hidden.bs.modal', handleResize);
+            }
+        };
+    }, [id]);
 
 
 
@@ -67,6 +67,10 @@ function NotesContainer({ id, title, content, onDelete }) {
     //     }
     // };
 
+
+
+
+
     // Function to delete the note
     async function handleDelete() {
         if (!auth.currentUser) return;
@@ -80,27 +84,27 @@ function NotesContainer({ id, title, content, onDelete }) {
             console.error("Error deleting note:", error);
         }
     }
-const updateNote = async () => {
-    if (!auth.currentUser) return;
+    const updateNote = async () => {
+        if (!auth.currentUser) return;
 
-    const updatedTitle = modalTitleRef.current.innerText;
-    const updatedContent = modalContentRef.current.innerText;
+        const updatedTitle = modalTitleRef.current.innerText;
+        const updatedContent = modalContentRef.current.innerText;
 
-    if (updatedTitle === noteTitle && updatedContent === noteContent) return;
+        if (updatedTitle === noteTitle && updatedContent === noteContent) return;
 
-    try {
-        const noteRef = doc(db, "users", auth.currentUser.uid, "notes", id);
-        await updateDoc(noteRef, {
-            title: updatedTitle,
-            content: updatedContent
-        });
+        try {
+            const noteRef = doc(db, "users", auth.currentUser.uid, "notes", id);
+            await updateDoc(noteRef, {
+                title: updatedTitle,
+                content: updatedContent
+            });
 
-        setNoteTitle(updatedTitle);
-        setNoteContent(updatedContent);
-    } catch (error) {
-        console.error("Error updating note:", error);
-    }
-};
+            setNoteTitle(updatedTitle);
+            setNoteContent(updatedContent);
+        } catch (error) {
+            console.error("Error updating note:", error);
+        }
+    };
 
 
     return (

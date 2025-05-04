@@ -8,7 +8,6 @@ import {
 import { auth } from "./firebase"; // Import initialized auth from firebase.js
 
 
-
 // Google Sign-In
 const signInWithGoogle = async () => {
     try {
