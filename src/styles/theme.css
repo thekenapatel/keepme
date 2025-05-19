@@ -1,6 +1,6 @@
 /* Dark and Light Toggle Button */
 .mode-container {
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 body.dark-mode .main-container {
@@ -9,7 +9,7 @@ body.dark-mode .main-container {
 
 body.dark-mode .notes {
     background: #222831;
-    border: 2px solid #3d3c3c;
+    border: 1px solid #414040;
     color: #f0f0f0;
     box-shadow: 0 2px 5px #14171c;
 }
@@ -33,9 +33,9 @@ body.dark-mode .login-page {
     border-radius: 20px;
 }
 
-body.dark-mode .logo-name h1,
+
 body.dark-mode .menu-loggedin {
-    color: #00A693;
+    color: #f0f0f0;
 }
 
 body.dark-mode .login-w-google {
@@ -81,7 +81,7 @@ body.dark-mode .delete-button:hover {
 body.dark-mode .new-note {
     background-color: #222831;
     color: #f0f0f0;
-    border: 2px solid #626262;
+    border: 1px solid #626262;
 }
 
 body.dark-mode .note-title,
@@ -91,7 +91,7 @@ body.dark-mode .note-content {
 
 body.dark-mode .note-title:empty::before,
 body.dark-mode .note-content:empty::before {
-    color: #888;
+    color: #b1b1b1;
 }
 
 

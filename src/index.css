@@ -160,6 +160,7 @@ div {
   margin: 0 20px;
   width: 500px;
   border-radius: 7px;
+  border: 1px solid #ccc;
   box-shadow: 0.2px 0.2px 6px 1.5px rgba(0, 0, 0, 0.25);
   transition: height 0.3s ease-in-out;
   min-height: 30px;
@@ -214,6 +215,7 @@ div {
 
 .notes {
   background: #fff;
+  border: 1px solid #EEEEEE;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 12px 15px;
