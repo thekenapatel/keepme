@@ -1,0 +1,120 @@
+/* Dark and Light Toggle Button */
+.mode-container {
+    margin-left: 20px;
+}
+
+body.dark-mode .main-container {
+    background: #222831;
+}
+
+body.dark-mode .notes {
+    background: #222831;
+    border: 2px solid #3d3c3c;
+    color: #f0f0f0;
+    box-shadow: 0 2px 5px #14171c;
+}
+
+body.dark-mode header h1 {
+    color: #00A693;
+}
+
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode .user-profile {
+    background-color: #31363F;
+    color: #f0f0f0;
+}
+
+/* login page */
+body.dark-mode .login-page {
+    background: #3d3c3c;
+    background-image: radial-gradient(#606265 7.2%, transparent 0);
+    background-size: 25px 25px;
+    border-radius: 20px;
+}
+
+body.dark-mode .logo-name h1,
+body.dark-mode .menu-loggedin {
+    color: #00A693;
+}
+
+body.dark-mode .login-w-google {
+    background-color: #141920;
+    color: #b1b1b1;
+    border: 2px solid #777;
+}
+
+body.dark-mode .login-w-google:hover {
+    background-color: #000000;
+}
+
+/* user menu profile */
+body.dark-mode .user-menu {
+    background: #222831;
+    border: 2px solid #777;
+}
+
+body.dark-mode .add-account,
+body.dark-mode .user-menu button {
+    background: #13171d;
+    color: white;
+    border: 2px solid #3d3c3c;
+}
+
+body.dark-mode .add-account:hover,
+body.dark-mode .user-menu button:hover {
+    background: #0b0e12;
+}
+
+
+
+body.dark-mode .delete-button {
+    background: #3d3c3c;
+}
+
+body.dark-mode .delete-button:hover {
+    color: #e3e2e2;
+}
+
+
+/* new note area */
+body.dark-mode .new-note {
+    background-color: #222831;
+    color: #f0f0f0;
+    border: 2px solid #626262;
+}
+
+body.dark-mode .note-title,
+body.dark-mode .note-content {
+    color: #f0f0f0;
+}
+
+body.dark-mode .note-title:empty::before,
+body.dark-mode .note-content:empty::before {
+    color: #888;
+}
+
+
+
+
+
+/* modal */
+body.dark-mode .custom-modal {
+    background: #222831;
+    color: #f0f0f0;
+    border: 2px solid #777;
+}
+
+body.dark-mode .custom-modal::-webkit-scrollbar {
+    width: 10px;
+}
+
+body.dark-mode .custom-modal::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body.dark-mode .custom-modal::-webkit-scrollbar-thumb {
+    background: #000;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}

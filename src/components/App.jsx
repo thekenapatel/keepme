@@ -8,7 +8,10 @@ import { signInWithGoogle, logout } from "./auth";
 import { auth, db } from "./firebase";
 import { collection, addDoc, query, orderBy, onSnapshot, deleteDoc, doc, serverTimestamp } from "firebase/firestore";
 import homepagelogo from "../assets/homepage-logo.png";
-
+import "../styles/loading.css";
+import "../styles/mediaqueries.css";
+import "../styles/modal.css";
+import "../styles/theme.css";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -62,6 +65,7 @@ function App() {
 
 
 
+
   // ✅ Function to add notes to Firestore
   const addNote = async (newNote) => {
     if (!user) return;
@@ -91,18 +95,16 @@ function App() {
   };
 
 
-
   // Show loading spinner before authentication is checked
   if (loading) {
     return (
       <div className="ispinner">
-        {[...Array(12)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <div key={i} className="ispinner-blade"></div>
         ))}
       </div>
     );
   }
-
 
 
   return (
@@ -120,18 +122,20 @@ function App() {
           <>
             <Header user={user} onLogout={logout} />
             <NewNoteArea fetchNotes={fetchNotes} onAdd={addNote} />
-            <div className="notes-container" ref={masonryRef}>
-              {notes.map((noteItem) => {
-                return (
-                  <NotesContainer
-                    key={noteItem.id}
-                    id={noteItem.id}
-                    title={noteItem.title}
-                    content={noteItem.content}
-                    onDelete={deleteNote}
-                  />
-                );
-              })}
+            <div className="notes-all">
+              <div className="notes-container" ref={masonryRef}>
+                {notes.map((noteItem) => {
+                  return (
+                    <NotesContainer
+                      key={noteItem.id}
+                      id={noteItem.id}
+                      title={noteItem.title}
+                      content={noteItem.content}
+                      onDelete={deleteNote}
+                    />
+                  );
+                })}
+              </div>
             </div>
             <Footer />
           </>

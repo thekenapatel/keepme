@@ -41,18 +41,25 @@ function updateUserMenu(user) {
     if (user && userEmail && userName && userPic) {
         // User is signed in
         userEmail.textContent = user.email || "No Email";
-        userPic.src = user.photoURL || "../assets/user.png";
+        userPic.src = user.photoURL || "User Image";
         userName.textContent = user.displayName || "No Name";
     } else if (userName && userEmail && userPic) {
         // User is signed out
         userEmail.textContent = "Not logged in";
-        userPic.src = "../assets/user.png";
+        userPic.textContent = "User Image";
         userName.textContent = "Guest";
     }
 }
 
 // Check authentication state
 onAuthStateChanged(auth, (user) => {
+    if (user) {
+        console.log("User Info:", user);
+        console.log("Photo URL:", user.photoURL || "User Image"); // 👈 Check this in the console
+        // Save to state
+      } else {
+        console.log("No user is signed in.");
+      }
     updateUserMenu(user);
 });
 

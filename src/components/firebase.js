@@ -14,7 +14,6 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 console.log("App initialized:", app);
@@ -23,8 +22,5 @@ const auth = getAuth(app); // Authentication
 const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
 
-
 // Export for use in other components
 export { auth, db, provider, signInWithPopup, signOut };
-
-

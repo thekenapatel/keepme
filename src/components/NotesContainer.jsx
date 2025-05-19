@@ -44,33 +44,6 @@ function NotesContainer({ id, title, content, onDelete }) {
     }, [id]);
 
 
-
-
-
-
-    // const updateNote = async () => {
-    //     if (!auth.currentUser) return;
-
-    //     const noteRef = doc(db, "users", auth.currentUser.uid, "notes", id);
-    //     const updatedTitle = modalTitleRef.current.innerText;
-    //     const updatedContent = modalContentRef.current.innerText;
-
-    //     try {
-    //         await updateDoc(noteRef, {
-    //             title: updatedTitle,
-    //             content: updatedContent
-    //         });
-    //         setNoteTitle(updatedTitle);
-    //         setNoteContent(updatedContent);
-    //     } catch (error) {
-    //         console.error("Error updating note:", error);
-    //     }
-    // };
-
-
-
-
-
     // Function to delete the note
     async function handleDelete() {
         if (!auth.currentUser) return;
@@ -84,6 +57,7 @@ function NotesContainer({ id, title, content, onDelete }) {
             console.error("Error deleting note:", error);
         }
     }
+    
     const updateNote = async () => {
         if (!auth.currentUser) return;
 

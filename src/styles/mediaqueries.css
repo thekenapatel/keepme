@@ -1,0 +1,192 @@
+/* ========== RESPONSIVE LOGIN PAGE ========== */
+@media (max-width: 600px) {
+    .login-page {
+        padding: 10px;
+    }
+
+    .login-page h1 {
+        font-size: 2.2rem;
+    }
+
+    .login-w-google {
+        padding: 8px 30px;
+        font-size: 1rem;
+    }
+
+    .logo {
+        width: 24px;
+        margin-right: 8px;
+    }
+
+    .homepage-logo {
+        width: 36px;
+        height: 36px;
+        margin-right: 8px;
+    }
+
+    .ispinner {
+        width: 50px;
+        height: 50px;
+    }
+
+    .ispinner-blade {
+        width: 4%;
+        height: 18%;
+    }
+}
+
+
+
+
+/* === RESPONSIVE HEADER === */
+@media (max-width: 600px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .logo {
+        width: 22px;
+    }
+
+    .profile-picture,
+    .user-profile {
+        width: 30px;
+        height: 30px;
+    }
+
+    .user-menu {
+        width: 220px;
+        height: auto;
+        right: 15px;
+        top: 80px;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .menu-profile-pic {
+        width: 60px;
+        height: 60px;
+    }
+
+    .menu-user-name {
+        font-size: 16px;
+        margin: 8px 0 25px;
+    }
+
+    .menu-user-email {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .add-account,
+    .user-menu button {
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    footer p {
+        font-size: 13px;
+    }
+}
+
+
+/* ========== RESPONSIVE NEW NOTE & ALL NOTES ========== */
+@media (max-width: 800px) {
+    .new-note-container {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+
+    .new-note {
+        width: 100%;
+        max-width: 100%;
+        margin: 15px 30px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        min-height: 20px;
+    }
+
+    .note-title,
+    .note-content {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    .new-note.expanded {
+        min-height: 100px;
+    }
+
+    .new-note.expanded .note-title,
+    .new-note.expanded .note-content {
+        min-height: 35px;
+    }
+
+    .add-button {
+        width: 30px;
+        height: 30px;
+        font-size: 23px;
+        margin: 0 4px 4px 0;
+    }
+
+    .delete-button {
+        width: 33px;
+        height: 33px;
+    }
+
+    .notes-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 5px;
+        padding: 20px;
+        justify-content: center;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .notes {
+        width: 300px;
+    }
+
+    .notes-all {
+        display: flex;
+        justify-content: center;
+    }
+
+    .modal {
+        padding: 30px;
+    }
+
+    .menu-user-name,
+    .menu-user-email {
+        font-size: 13px;
+    }
+}
+
+
+/* mobile phone screen */
+@media(max-width: 450px) {
+    .notes {
+        width: 180px;
+        margin: 5px;
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+
+    .notes-container {
+        margin: 0;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .notes-all {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+}

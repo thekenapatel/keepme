@@ -1,0 +1,97 @@
+/* ---------- Pop Up Modal ------------ */
+.edit-content {
+    outline: none;
+}
+
+.modal-body {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 10px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background-color: #00000033;
+    border-radius: 1px;
+    transition: background-color 0.3s;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.custom-modal {
+    border-radius: 12px;
+    padding: 0;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-height: 80vh;
+}
+
+.editable-title {
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    padding: 3px 10px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.editable-content {
+    font-size: 1em;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    min-height: 200px;
+    outline: none;
+    border: none;
+    max-height: 50vh;
+    padding: 3px 10px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.editable-title:focus,
+.editable-content:focus {
+    outline: none;
+}
+
+.modal-footer {
+    padding: 10px 20px;
+}
+
+/* Placeholder styling using :empty:before */
+.edit-title:empty::before,
+.edit-content:empty::before {
+    content: attr(data-placeholder);
+    color: #3d3d3d;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.save-button {
+    width: 60px;
+    height: 33px;
+    font-size: 14px;
+    background: #00A693;
+    outline: none;
+    border: none;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.save-button:hover {
+    background: #6e6c6c;
+}
