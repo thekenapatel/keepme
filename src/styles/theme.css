@@ -118,3 +118,7 @@ body.dark-mode .custom-modal::-webkit-scrollbar-thumb {
     border: 2px solid transparent;
     background-clip: content-box;
 }
+
+body.dark-mode .modal-body {
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+}

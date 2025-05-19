@@ -169,7 +169,7 @@
 
 
 /* mobile phone screen */
-@media(max-width: 450px) {
+@media(max-width: 500px) {
     .notes {
         width: 180px;
         margin: 5px;
@@ -179,7 +179,7 @@
 
     .notes-container {
         margin: 0;
-        padding: 10px 0;
+        padding: 5px 0 100px 0;
         display: flex;
         justify-content: center;
     }
