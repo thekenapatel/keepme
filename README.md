@@ -19,15 +19,6 @@ A beautiful, cloud-powered note app with real-time updates, secure login, and a 
 
 ---
 
-## 🖼️ Project Screenshots
-
-![Login Page](https://github.com/user-attachments/assets/4020c6ad-2514-4aad-820e-225bd182dcd6)
-![Home Page](https://github.com/user-attachments/assets/506d8445-d9fb-4bb0-a9ee-c116c60ebaa1)
-![Auth Page](https://github.com/user-attachments/assets/ce546d97-daa8-40fc-b0dd-dbc9fb04d1e8)
-![Edit Note Modal](https://github.com/user-attachments/assets/ba945217-426a-4ffd-bd12-6dc7b1f2ffde)
-
----
-
 ## 🔧 Tech Stack
 
 - **Frontend** – React, Material UI, Bootstrap
